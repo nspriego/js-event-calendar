@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<nav>
+		<a href="index.html">CS 2550</a> |
+		<a href="calendar.html">calendar</a>
+	</nav>
+	<hr>
+
+	<h2>Description</h2>
+	<p>
+		Like the calendar described the assignment page, this calendar shows a grid representing the current month with the days of the week listed across the top, and the day of the month displayed in each square. Each date has text that tells how many events have been created for that day. There are buttons to move to the next month and to the previous month. The finished calendar will allow the user to click on each date to show the events for the day in a separate view, and add a new event for that day. The styling will attempt to mimic <a href="http://www.apple.com/osx/apps/#calendar" target="_blank">Mac's calander app</a>.
+	</p>
+
+	<img src="img/calendar.jpg" alt="calendar">
+
+	<h2>Preliminary Software Design</h2>
+	
+	<ul>
+		<li><h3>Models</h3></li>
+		<p>
+			<b>Event</b><br>
+			Each event has a start time, a duration, a name, a place, and notes.
+		</p>
+
+		<p>
+			<b>Month</b><br>
+			The Month model will handle knowing all the days and months of the year, as well as know the current date.
+		</p>
+		
+		
+		<li><h3>Functions</h3></li>
+		<p><b>getDate()</b> * returns the current date</p>
+		<p><b>createEvent(<i>date</i>)</b> * method used when user create's event </p>
+		<p><b>events(<i>date</i>)</b> * returns the events for a specified date</p>
+		<p><b>numEvents(<i>date</i>)</b> * returns the number of events for specified date</p>
+
+		<li><h3>Notes</h3></li>
+		<p>
+			I am sure there will be even more functions and maybe even another model when all is said and done.
+		</p>
+	</ul>
+</body>
+</html>

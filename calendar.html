@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Event Calendar</title>
+
+	<script type="text/javascript" src="javascript/date.js"></script>
+	<script type="text/javascript" src="javascript/calendar.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/calendar.css">
+</head>
+<body onload="load">
+	<nav>
+		<a href="index.html">CS 2550</a> |
+		<a href="calendar.html">calendar</a>
+	</nav>
+	<hr>
+	<h1 class="month-heading">
+		<button onclick="previousMonth()"><</button>
+			<span id="month-name"></span>
+		<button onclick="subsequentMonth()">></button>
+	</h1>
+	<p id="current-date"></p>
+
+	<!-- <button onclick="showCalendar()" style="margin-left: 15%">View Table</button> -->
+	<div id="calendar" class="center"></div>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+	var	monthNum = currentMonthNum();
+
+	window.onload = function() {
+		displayCurrentDate();
+		updateMonthName(monthNum);
+		showCalendar(currentMonthNum());
+	};
+
+	var	previousMonth = function() {
+		var calDiv = document.getElementById("calendar");
+		calDiv.innerHTML = "";
+		monthNum--;
+		showCalendar(monthNum);
+		updateMonthName(monthNum);
+	};
+
+	var	subsequentMonth = function() {
+		var calDiv = document.getElementById("calendar");
+		calDiv.innerHTML = "";
+		monthNum++;
+		showCalendar(monthNum);
+		updateMonthName(monthNum);
+	};
+
+	var	updateMonthName = function(num) {
+		var m = document.getElementById("month-name");
+		m.innerHTML = monthName(num);
+	};
+
+	var displayCurrentDate = function() {
+		var ele = document.getElementById("current-date");
+		ele.innerHTML = currentDate();
+	};
+</script>

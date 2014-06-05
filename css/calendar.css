@@ -1,0 +1,38 @@
+table {
+	border-collapse:collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+.month-heading {
+	text-align: center;
+}
+
+#current-date {
+	margin-left: 15%;
+}
+
+tr.date-content-row td {
+	height: 140px;
+	width: 150px;
+}
+
+.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+}
+
+.date-content {
+	position:relative; 
+	overflow: auto; 
+	height: 100%;
+}
+
+.date-number {
+	position:absolute; 
+	top:0; 
+	right:0;
+}
