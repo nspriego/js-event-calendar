@@ -13,7 +13,7 @@ function createCalendar (rows, columns, monthNum) {
 		
 		htmlString += "<tr class='date-content-row'>"
 		for (var j = 0; j < columns; j++) {
-			htmlString += "<td>" + dateContents(calendarDays[i][j]) + "</td>"; // create table cell
+			htmlString += "<td id='" + calendarDays[i][j] + "'>" + dateContents(calendarDays[i][j]) + "</td>"; // create table cell
 		};
 		htmlString += "</tr>";
 	};				
@@ -34,9 +34,9 @@ function calendarHeaderRow () {
 	return htmlString;
 }
 
-function dateContents (dateNum) {
+function dateContents (date) {
 	divContents =  "<div class='date-content'>";
-	divContents += "<div class='date-number'>" + dateNum + "</date>";
+	divContents += "<div class='date-number'>" + date.getDate() + "</date>";
 	divContents += "<div class='date-events'></date>";
 	divContents += "</div>";
 
