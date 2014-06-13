@@ -6,7 +6,7 @@ function showCalendar (monthNum) {
 function createCalendar (rows, columns, monthNum) {
 	calendarDays = dateMatrix(monthNum);
 	
-	htmlString = "<table>";
+	htmlString = "<table id='calendarTable'>";
 	htmlString += calendarHeaderRow();
 	
 	for (var i = 0; i < rows; i++) { // for each row

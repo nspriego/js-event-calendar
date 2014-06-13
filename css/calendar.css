@@ -12,6 +12,12 @@ table, th, td {
 
 #current-date {
 	margin-left: 15%;
+	display: inline;
+}
+
+#coordinateMessage {
+	margin-left: 45%;
+	display: inline;
 }
 
 tr.date-content-row td {

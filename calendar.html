@@ -18,6 +18,7 @@
 		<button onclick="subsequentMonth()">></button>
 	</h1>
 	<p id="current-date"></p>
+	<p id="coordinateMessage"></p>
 
 	<!-- <button onclick="showCalendar()" style="margin-left: 15%">View Table</button> -->
 	<div id="calendar" class="center"></div>
@@ -32,6 +33,26 @@
 		displayCurrentDate();
 		updateMonthName(monthNum);
 		showCalendar(currentMonthNum());
+		createClickableGrid();
+	};
+
+	var createClickableGrid = function() {
+		var calDiv = document.getElementById("calendar");
+		var cells = calDiv.getElementsByTagName("td");
+		for (var i = cells.length - 1; i >= 0; i--) {
+			cells[i].onclick = setColor;
+		};
+	};
+
+	var setColor = function() {
+		var col = this.cellIndex
+		var row = this.parentNode.rowIndex;
+		//alert("cell coordinates are [" + row + ", " + col  + "]");
+		calTable = document.getElementById("calendarTable");
+		cell = calTable.rows[row].cells[col];
+		cell.style.color = "red";
+		messageDiv = document.getElementById("coordinateMessage");
+		messageDiv.innerHTML = "Coordinates are [" + row + ", " + col  + "]";
 	};
 
 	var	previousMonth = function() {
