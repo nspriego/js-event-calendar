@@ -2,3 +2,12 @@
 	display: inline-block;
 	float: right;
 }
+
+.login-btn {
+	background-color: lightblue;
+}
+
+#errors {
+	color: red;
+	font-style: italic;
+}

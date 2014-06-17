@@ -6,12 +6,14 @@
 </head>
 <body>
 	<nav>
-		<a href="index.html">CS 2550</a> |
-		<a href="calendar.html">calendar</a>
+		<a href="index.html">CS 2550</a>
+		<!-- <a href="calendar.html">calendar</a> -->
 
 		<div class="login-form">
-			u: <input class="login" type="text">
-			p: <input class="login" type="password">
+			<span id="errors"></span>
+			u: <input id="uname" type="text">
+			p: <input id=pword type="password">
+			<input type="submit" class="login-btn" value="Go" onclick="login()">
 		</div>
 	</nav>
 	<hr>
@@ -63,3 +65,28 @@
 	</ul>
 </body>
 </html>
+
+<script type="text/javascript">
+	var login = function() {
+		var uname = document.getElementById('uname').value;
+		var pword = document.getElementById('pword').value;
+		var ajax = new XMLHttpRequest();
+		ajax.open('POST', 'http://universe.tc.uvu.edu/cs2550/assignments/PasswordCheck/check.php', false);
+		ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		ajax.send('userName='+uname+'&password='+pword);
+		handleResponse(ajax.responseText);
+	};
+
+	var	handleResponse = function(text) {
+		var response = JSON.parse(text);
+
+		if (response.result == 'valid') {
+			// authenticated
+			localStorage["cs2550timestamp"] = response.userName + ' ' + response.timestamp
+			window.location.href = 'calendar.html'
+		} else {
+			var errorDiv = document.getElementById('errors');
+			errorDiv.innerHTML = 'invalid username/password combo';
+		}
+	};
+</script>

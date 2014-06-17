@@ -42,3 +42,10 @@ tr.date-content-row td {
 	top:0; 
 	right:0;
 }
+
+#welcome-message {
+	font-style: italic;
+	display: inline-block;
+	float: right;
+}
+

@@ -10,8 +10,11 @@
 	<nav>
 		<a href="index.html">CS 2550</a> |
 		<a href="calendar.html">calendar</a>
+		<div id="welcome-message">
+		</div>
 	</nav>
 	<hr>
+	<button onclick="clearStorage()" style="float:right;">Clear localStorage</button>
 	<h1 class="month-heading">
 		<button onclick="previousMonth()"><</button>
 			<span id="month-name"></span>
@@ -30,10 +33,20 @@
 	var	monthNum = currentMonthNum();
 
 	window.onload = function() {
+		if (localStorage["cs2550timestamp"]) {
+			showGreeting();
+		};
 		displayCurrentDate();
 		updateMonthName(monthNum);
 		showCalendar(currentMonthNum());
 		createClickableGrid();
+	};
+
+	var	showGreeting = function() {
+		var welcomeDiv = document.getElementById('welcome-message');
+		var	userinfo = localStorage["cs2550timestamp"].split(" ");
+		var	message = "Welcome " + userinfo[0] + ", logged in at (" + userinfo[1] + ")";
+		welcomeDiv.innerHTML = message;
 	};
 
 	var createClickableGrid = function() {
@@ -79,5 +92,9 @@
 	var displayCurrentDate = function() {
 		var ele = document.getElementById("current-date");
 		ele.innerHTML = currentDate();
+	};
+
+	var	clearStorage = function() {
+		localStorage.clear();
 	};
 </script>
