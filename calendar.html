@@ -39,7 +39,26 @@
 		displayCurrentDate();
 		updateMonthName(monthNum);
 		showCalendar(currentMonthNum());
+		showEvents();
 		createClickableGrid();
+	};
+
+	var	showEvents = function() {
+		var ajax = new XMLHttpRequest();
+		ajax.open('GET', 'events.json', false);
+		ajax.send();
+		var response = JSON.parse(ajax.responseText);
+		for ( key in response ) {
+			var htmlString = "<ul>";
+			htmlString += "<b>" + response[key].name + "</b>";
+			htmlString += "<li>" + response[key].starttime + "</li>";
+			htmlString += "<li>" + response[key].duration + "</li>";
+			htmlString += "<li>" + response[key].place + "</li>";
+			htmlString += "<li>" + response[key].notes + "</li>";
+			htmlString += "</ul>";
+			var dateDiv = document.getElementById(response[key].starttime);
+			dateDiv.innerHTML = htmlString;
+		}
 	};
 
 	var	showGreeting = function() {
@@ -60,7 +79,6 @@
 	var setColor = function() {
 		var col = this.cellIndex
 		var row = this.parentNode.rowIndex;
-		//alert("cell coordinates are [" + row + ", " + col  + "]");
 		calTable = document.getElementById("calendarTable");
 		cell = calTable.rows[row].cells[col];
 		cell.style.color = "red";

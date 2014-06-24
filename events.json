@@ -1,0 +1,41 @@
+{
+	"event1" : {
+		"starttime" : "Fri Jun 13 2014 00:00:00 GMT-0600 (MDT)",
+		"duration" : "3 Hours",
+		"name" : "BBQ at the Johnsons",
+		"place" : "Johnsons house",
+		"notes" : "Bring beer, chips"
+	},
+
+	"event2" : {
+		"starttime" : "Mon Jun 23 2014 00:00:00 GMT-0600 (MDT)",
+		"duration" : "2 Hours",
+		"name" : "Calculus test",
+		"place" : "UVU testing center",
+		"notes" : "Dont be late!"
+	},
+
+	"event3" : {
+		"starttime" : "Tue Jun 10 2014 00:00:00 GMT-0600 (MDT)",
+		"duration" : "2 Hours",
+		"name" : "JS Meetup",
+		"place" : "Stevens Heneger College",
+		"notes" : "Room 207"
+	},
+
+	"event4" : {
+		"starttime" : "Sat Jun 21 2014 00:00:00 GMT-0600 (MDT)",
+		"duration" : "4 Hours",
+		"name" : "Service Project",
+		"place" : "Koelo Park",
+		"notes" : "Painting - bring brush"
+	},
+
+	"event5" : {
+		"starttime" : "Mon Jun 02 2014 00:00:00 GMT-0600 (MDT)",
+		"duration" : "3 Hours",
+		"name" : "Family Reunion",
+		"place" : "Harvest Park",
+		"notes" : "Have to stay at least 3 hrs"
+	}
+}
