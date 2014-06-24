@@ -56,7 +56,7 @@
 			htmlString += "<li>" + response[key].place + "</li>";
 			htmlString += "<li>" + response[key].notes + "</li>";
 			htmlString += "</ul>";
-			var dateDiv = document.getElementById(response[key].starttime);
+			var dateDiv = document.getElementById(response[key].date);
 			dateDiv.innerHTML = htmlString;
 		}
 	};
